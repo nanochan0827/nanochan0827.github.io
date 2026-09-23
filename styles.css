@@ -54,6 +54,7 @@ button { font:inherit; }
 .works-panel { background:#fff; }
 .art-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px 24px; }
 .art-card h3 { margin:16px 0 0; font-size:16px; line-height:1.4; }
+.art-card .art-year { margin:16px 0 -10px; font-size:14px; font-weight:400; line-height:1.4; }
 .art-card--button { width:100%; margin:0; padding:0; border:0; background:transparent; color:inherit; text-align:left; cursor:pointer; }
 .art-image { aspect-ratio:405/228; overflow:hidden; border-radius:10px; background:#e2f5ff; }
 .art-image img { width:100%; height:100%; object-fit:cover; transition:transform .45s; }
@@ -105,6 +106,8 @@ button { font:inherit; }
 .art-modal__visual { width:min(720px,100%); height:auto; margin:0 auto; }
 .art-modal h2 { margin:16px 0; font-size:24px; line-height:1.4; }
 .art-modal p { margin:0; font-size:16px; line-height:1.8; }
+.art-modal .art-modal__year { margin:16px 0 0; font-size:14px; line-height:1.4; }
+.art-modal__year + h2 { margin-top:0; }
 .art-modal__link { display:inline-flex; align-items:center; gap:8px; margin:0 0 16px; color:#433c66; font-size:14px; line-height:1.5; overflow-wrap:anywhere; }
 .art-modal__link img { width:24px; height:24px; flex:0 0 auto; }
 .art-modal--varbarian { background:rgba(0,0,0,.7); }
@@ -116,6 +119,7 @@ button { font:inherit; }
 .varbarian-gallery__special { grid-column:1/-1; width:min(400px,100%); justify-self:center; }
 .varbarian-details { display:grid; gap:16px; margin-top:24px; }
 .art-modal .varbarian-details h2,.varbarian-details .art-modal__link { margin:0; }
+.art-modal .varbarian-details .art-modal__year { margin:0 0 -16px; }
 .art-modal--book { background:rgba(0,0,0,.7); }
 .art-modal--book .art-modal__dialog { top:40px; transform:none; }
 .book-visual { display:flex; align-items:center; flex-direction:column; gap:8px; margin:0; }
@@ -123,6 +127,7 @@ button { font:inherit; }
 .book-visual figcaption { font-size:13px; line-height:1.8; text-align:center; }
 .book-details { display:grid; gap:16px; margin-top:24px; }
 .art-modal .book-details h2,.book-details .art-modal__link { margin:0; }
+.art-modal .book-details .art-modal__year { margin:0 0 -16px; }
 .art-modal--alpha-u { background:rgba(0,0,0,.7); }
 .art-modal--alpha-u .art-modal__dialog { top:40px; transform:none; }
 .alpha-u-gallery { display:grid; gap:24px; }
@@ -138,6 +143,7 @@ button { font:inherit; }
 .alpha-u-gallery__bottom img:last-child { aspect-ratio:3/4; }
 .alpha-u-details { display:grid; gap:16px; margin-top:24px; }
 .art-modal .alpha-u-details h2,.alpha-u-details .art-modal__link { margin:0; }
+.art-modal .alpha-u-details .art-modal__year { margin:0 0 -16px; }
 .alpha-u-links { display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
 .art-modal--piko { background:rgba(0,0,0,.7); }
 .art-modal--piko .art-modal__dialog { top:40px; transform:none; }
@@ -148,6 +154,7 @@ button { font:inherit; }
 .piko-gallery__sub img:first-child { object-position:center; }
 .piko-details { display:grid; gap:16px; margin-top:24px; }
 .art-modal .piko-details h2,.piko-details .art-modal__link { margin:0; }
+.art-modal .piko-details .art-modal__year { margin:0 0 -16px; }
 .work-modal__dialog { position:absolute; top:50%; right:max(40px,calc((100vw - 1280px)/2 + 40px)); width:min(898px,calc(100vw - 350px)); height:min(640px,calc(100dvh - 80px)); overflow:hidden; border-radius:40px; background:#d6d5e5; transform:translateY(-50%); }
 .work-modal__close { position:absolute; z-index:2; top:32px; right:32px; display:grid; place-items:center; width:60px; height:60px; padding:0; border:0; background:transparent; cursor:pointer; }
 .work-modal__close img { width:34px; height:34px; }
