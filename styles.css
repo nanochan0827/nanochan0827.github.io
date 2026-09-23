@@ -105,6 +105,49 @@ button { font:inherit; }
 .art-modal__visual { width:min(720px,100%); height:auto; margin:0 auto; }
 .art-modal h2 { margin:16px 0; font-size:24px; line-height:1.4; }
 .art-modal p { margin:0; font-size:16px; line-height:1.8; }
+.art-modal__link { display:inline-flex; align-items:center; gap:8px; margin:0 0 16px; color:#433c66; font-size:14px; line-height:1.5; overflow-wrap:anywhere; }
+.art-modal__link img { width:24px; height:24px; flex:0 0 auto; }
+.art-modal--varbarian { background:rgba(0,0,0,.7); }
+.art-modal--varbarian .art-modal__dialog { top:40px; transform:none; }
+.varbarian-gallery { display:grid; grid-template-columns:minmax(0,375px) minmax(0,351px); justify-content:center; gap:24px 32px; }
+.varbarian-gallery figure { display:flex; align-items:center; flex-direction:column; gap:8px; min-width:0; margin:0; }
+.varbarian-gallery figure>img { width:100%; height:auto; object-fit:contain; }
+.varbarian-gallery figcaption { font-size:13px; line-height:1.8; text-align:center; }
+.varbarian-gallery__special { grid-column:1/-1; width:min(400px,100%); justify-self:center; }
+.varbarian-details { display:grid; gap:16px; margin-top:24px; }
+.art-modal .varbarian-details h2,.varbarian-details .art-modal__link { margin:0; }
+.art-modal--book { background:rgba(0,0,0,.7); }
+.art-modal--book .art-modal__dialog { top:40px; transform:none; }
+.book-visual { display:flex; align-items:center; flex-direction:column; gap:8px; margin:0; }
+.book-visual img { width:min(388px,100%); height:auto; object-fit:contain; }
+.book-visual figcaption { font-size:13px; line-height:1.8; text-align:center; }
+.book-details { display:grid; gap:16px; margin-top:24px; }
+.art-modal .book-details h2,.book-details .art-modal__link { margin:0; }
+.art-modal--alpha-u { background:rgba(0,0,0,.7); }
+.art-modal--alpha-u .art-modal__dialog { top:40px; transform:none; }
+.alpha-u-gallery { display:grid; gap:24px; }
+.alpha-u-gallery figure { margin:0; }
+.alpha-u-gallery img { display:block; width:100%; height:auto; object-fit:cover; }
+.alpha-u-gallery figcaption { margin-top:8px; font-size:13px; line-height:1.8; text-align:center; }
+.alpha-u-gallery__top { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.alpha-u-gallery__main img { aspect-ratio:2/3; }
+.alpha-u-gallery__reboot > div { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.alpha-u-gallery__reboot img { aspect-ratio:1; }
+.alpha-u-gallery__bottom > div { display:grid; grid-template-columns:4fr 3fr; gap:16px; align-items:stretch; }
+.alpha-u-gallery__bottom img { aspect-ratio:1; }
+.alpha-u-gallery__bottom img:last-child { aspect-ratio:3/4; }
+.alpha-u-details { display:grid; gap:16px; margin-top:24px; }
+.art-modal .alpha-u-details h2,.alpha-u-details .art-modal__link { margin:0; }
+.alpha-u-links { display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
+.art-modal--piko { background:rgba(0,0,0,.7); }
+.art-modal--piko .art-modal__dialog { top:40px; transform:none; }
+.piko-gallery { display:grid; grid-template-columns:1.1fr 1fr; gap:8px; align-items:center; }
+.piko-gallery img { display:block; width:100%; height:auto; object-fit:contain; }
+.piko-gallery__sub { display:grid; grid-template-columns:1fr 1fr; gap:8px; align-items:center; }
+.piko-gallery__sub img { aspect-ratio:1; }
+.piko-gallery__sub img:first-child { object-position:center; }
+.piko-details { display:grid; gap:16px; margin-top:24px; }
+.art-modal .piko-details h2,.piko-details .art-modal__link { margin:0; }
 .work-modal__dialog { position:absolute; top:50%; right:max(40px,calc((100vw - 1280px)/2 + 40px)); width:min(898px,calc(100vw - 350px)); height:min(640px,calc(100dvh - 80px)); overflow:hidden; border-radius:40px; background:#d6d5e5; transform:translateY(-50%); }
 .work-modal__close { position:absolute; z-index:2; top:32px; right:32px; display:grid; place-items:center; width:60px; height:60px; padding:0; border:0; background:transparent; cursor:pointer; }
 .work-modal__close img { width:34px; height:34px; }
@@ -143,12 +186,36 @@ button { font:inherit; }
   .art-grid { grid-template-columns:1fr; gap:30px; }
   .art-modal { padding:16px; }
   .art-modal__dialog { max-height:calc(100dvh - 32px); padding:40px 16px 24px; border-radius:20px; }
+  .art-modal--varbarian .art-modal__dialog { top:auto; }
+  .art-modal--book .art-modal__dialog { top:auto; }
+  .art-modal--alpha-u .art-modal__dialog { top:auto; }
+  .art-modal--piko .art-modal__dialog { top:auto; }
   .art-modal__close { top:8px; right:8px; width:40px; height:40px; }
   .art-modal__close img { width:24px; height:24px; }
   .work-modal__close { top:8px; right:8px; width:40px; height:40px; }
   .work-modal__close img { width:24px; height:24px; }
   .art-modal h2 { margin:16px 0 10px; padding-right:24px; font-size:18px; }
   .art-modal p { font-size:13px; line-height:1.8; }
+  .varbarian-gallery { grid-template-columns:1fr; gap:20px; }
+  .varbarian-gallery__special { grid-column:auto; }
+  .varbarian-gallery figure { width:min(400px,100%); justify-self:center; }
+  .varbarian-gallery figcaption { font-size:12px; }
+  .varbarian-details { gap:12px; margin-top:20px; }
+  .varbarian-details .art-modal__link { align-items:flex-start; font-size:12px; }
+  .book-visual figcaption { font-size:12px; }
+  .book-details { gap:12px; margin-top:20px; }
+  .book-details .art-modal__link { align-items:flex-start; font-size:12px; }
+  .alpha-u-details { gap:12px; margin-top:20px; }
+  .alpha-u-details .art-modal__link { align-items:flex-start; font-size:12px; }
+  .alpha-u-gallery { gap:16px; }
+  .alpha-u-gallery__top { gap:12px; }
+  .alpha-u-gallery__reboot > div { gap:4px; }
+  .alpha-u-gallery__bottom > div { gap:8px; }
+  .alpha-u-gallery figcaption { font-size:10px; }
+  .piko-gallery { gap:4px; }
+  .piko-gallery__sub { gap:4px; }
+  .piko-details { gap:12px; margin-top:20px; }
+  .piko-details .art-modal__link { align-items:flex-start; font-size:12px; }
   .other-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 12px; }
   .other-card p,.other-card h3 { font-size:12px; }
   .content-stack>.about-panel { padding:40px 16px; border-radius:40px; }

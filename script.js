@@ -22,27 +22,35 @@
   });
   menu?.querySelectorAll('a[href^="#"]').forEach((link) => link.addEventListener('click', closeMenu));
 
-  const modal = document.querySelector('#rohto-modal');
-  const modalOpen = document.querySelector('[data-modal-open="rohto-modal"]');
-  const modalClose = modal?.querySelector('[data-modal-close]');
-  const closeModal = () => {
-    if (!modal || modal.hidden) return;
-    modal.hidden = true;
+  let activeArtModal = null;
+  let activeArtTrigger = null;
+  const closeArtModal = () => {
+    if (!activeArtModal) return;
+    activeArtModal.hidden = true;
     document.body.style.overflow = '';
-    modalOpen?.focus();
+    activeArtTrigger?.focus();
+    activeArtModal = null;
+    activeArtTrigger = null;
   };
-  modalOpen?.addEventListener('click', () => {
-    if (!modal) return;
-    modal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    modalClose?.focus();
+  document.querySelectorAll('[data-modal-open]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const target = document.getElementById(trigger.dataset.modalOpen);
+      if (!target) return;
+      activeArtModal = target;
+      activeArtTrigger = trigger;
+      target.hidden = false;
+      document.body.style.overflow = 'hidden';
+      target.querySelector('[data-modal-close]')?.focus();
+    });
   });
-  modalClose?.addEventListener('click', closeModal);
-  modal?.addEventListener('pointerdown', (event) => {
-    if (event.target === modal) closeModal();
+  document.querySelectorAll('.art-modal').forEach((modal) => {
+    modal.querySelector('[data-modal-close]')?.addEventListener('click', closeArtModal);
+    modal.addEventListener('pointerdown', (event) => {
+      if (event.target === modal) closeArtModal();
+    });
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeModal();
+    if (event.key === 'Escape') closeArtModal();
   });
 
   const workModal = document.querySelector('#work-modal');
